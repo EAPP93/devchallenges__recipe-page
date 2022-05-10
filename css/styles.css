@@ -6,6 +6,9 @@ Playfair Display 700 400|italic Montserrat 700 500 500|italic 400
 
 */
 
+
+
+
 :root {
   /* background color */
   --bg-principal: #FAFAFA;
@@ -18,20 +21,6 @@ Playfair Display 700 400|italic Montserrat 700 500 500|italic 400
   --font-color-footer: #929292;
   --font-color-grey: #BDBDBD;
   --font-color-white: #FFF;
-
-  @media (prefers-color-scheme: dark) {
-    /* background color */
-    --bg-principal: #444444;
-    --bg-secondary: #F2994A;
-
-    /* font color */
-    --font-color-title: #fff;
-    --font-color-subtitle: #f3f3f3;
-    --font-color-text: #aFaFaF;
-    --font-color-footer: #848484;
-    --font-color-grey: #BDBDBD;
-    --font-color-white: #fdfdfd;
-  }
 
   /* font size */
   --font-size-xx-large: calc(0.98rem + 2.25vw);
@@ -67,13 +56,25 @@ Playfair Display 700 400|italic Montserrat 700 500 500|italic 400
 
   /* font family */
   --font-family-montserrat: 'Montserrat',
-  sans-serif;
+    sans-serif;
   --font-family-playfair: 'Playfair Display',
-  serif;
+    serif;
 
 
-  /* icon */
-  --width-card-icon: calc(0.43rem + 1.9vw);
+  @media (prefers-color-scheme: dark) {
+    /* background color */
+    --bg-principal: #444444;
+    --bg-secondary: #F2994A;
+
+    /* font color */
+    --font-color-title: #fff;
+    --font-color-subtitle: #f3f3f3;
+    --font-color-text: #aFaFaF;
+    --font-color-footer: #848484;
+    --font-color-grey: #BDBDBD;
+    --font-color-white: #fdfdfd;
+  }
+
 }
 
 
@@ -123,8 +124,8 @@ header {
 }
 
 .header__icon {
-  width: calc(0.638rem + 0.75vw);
-  height: calc(0.325rem + 0.75vw);
+  width: calc(3rem + 0.25vw);
+  height: calc(0.45rem + 0.25vw);
 }
 
 .header__text {
@@ -175,7 +176,7 @@ main {
 }
 
 .card__icon-container {
-  width: var(--width-card-icon);
+  width: calc(0.43rem + 1.9vw);
 }
 
 .card_icon {
@@ -368,7 +369,7 @@ footer {
 
   main {
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 1fr);
     gap: 0;
   }
 
@@ -378,12 +379,14 @@ footer {
 
   .card {
     grid-column: 5 /-1;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 20px 0px rgba(150, 150, 150, 0.25);
     justify-content: center;
     align-items: center;
     padding: auto 6.75rem;
     max-height: 23rem;
   }
+
+
 
   .card__section:nth-child(2) {
     flex-direction: column;
@@ -391,6 +394,14 @@ footer {
 
   .card__section:nth-child(1) {
     margin-bottom: 0.9rem;
+  }
+
+  .card__container {
+    gap: 0.75rem;
+  }
+
+  .card__info-container {
+    padding-top: 0.2rem;
   }
 
   .form {
